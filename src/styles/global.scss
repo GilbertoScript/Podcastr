@@ -23,6 +23,12 @@
 }
 
 /* Alteração do tamanho da fonte para acessibilidade */
+@media (max-width: 1366px) {
+  html {
+    font-size: 80%;
+  }
+}
+
 @media (max-width: 1080px) {
 	html {
 		font-size: 93.75%; /* 15px */
