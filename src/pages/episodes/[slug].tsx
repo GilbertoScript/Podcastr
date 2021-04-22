@@ -1,9 +1,10 @@
 import Image from 'next/image'
 
 import { GetStaticProps, GetStaticPaths } from 'next'
-import Link from 'next/link'
 import { api } from '../../services/api'
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 import styles from './episode.module.scss'
 
@@ -28,6 +29,13 @@ type EpisodeProps = {
 
 export default function Episode({ episode }: EpisodeProps) {
 
+	const router = useRouter();
+
+	if(router.isFallback) {
+		return <p>Carregando...</p>
+	}
+
+	/* Retorno dos episódios -> 'estáticos dinâmicos' para cada podcast */
 	return (
 		<div className={styles.episode}>
 			<div className={styles.thumbnailContainer}>
@@ -61,9 +69,29 @@ export default function Episode({ episode }: EpisodeProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+
+	// Carregar na instância da build da aplicação apenas os podcast's mais acessados.
+	const { data } = await api.get('episodes?', {
+		params: {
+			_limit: 2,
+			_sort: 'published_at',
+			_order: 'desc',
+		}
+	})
+
+	const paths = data.map(episode => {
+		return {
+			params: {
+				slug: episode.id,
+			}
+		}
+	})
+
+
 	return {
 		paths: [],
 		fallback: 'blocking',
+
 	}
 }
 
