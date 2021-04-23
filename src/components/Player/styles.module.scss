@@ -113,6 +113,14 @@
 			border: 1px solid transparent;
 		}
 
+		&.isActive {
+			filter: invert(0.35) sepia(1) saturate(3) hue-rotate(100deg);
+
+			&:hover {
+				filter: brightness(0.4) invert(0.35) sepia(1) saturate(3) hue-rotate(100deg);
+			}
+		}
+
 		&.playButton {
 			width: 4rem;
 			height: 4rem;
