@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="./public/logo.svg" alt="Logo Podcastr" width="80" height="80">
+    <img src="./public/logo.svg" alt="Logo Podcastr">
   </a>
 
   <h3 align="center">Podcastr</h3>
@@ -51,7 +51,9 @@
 <!-- ABOUT THE PROJECT -->
 ## Sobre o projeto
 
+<br>
 <img src="./public/Home-Podcastr.PNG" alt="Home Podcastr">
+<br>
 
 Podcastr é uma aplicação web desenvolvida na NLW-5 - trilha de React - oferecida pela Rocketseat nos dias 19 a 25 de abril de 2021, a aplicação consiste em ouvir podcasts que estão armazenados em memória no arquivo ```server.json```.
 
