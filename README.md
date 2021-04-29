@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/GilbertoASJ/Podcastr">
     <img src="./public/logo.svg" alt="Logo Podcastr">
   </a>
 
